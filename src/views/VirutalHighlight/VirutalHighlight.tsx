@@ -42,12 +42,6 @@ const VirutalHighlight = () => {
       //   console.log(virtualBoxRef.current.getBoundingClientRect());
 
       setInitialPoint(virtualBoxRef.current.getBoundingClientRect());
-
-      //   console.log(
-      //     virtualBoxRef.current.getBoundingClientRect(),
-      //     e.offsetX,
-      //     e.offsetY
-      //   );
     };
 
     window.addEventListener("mousedown", mouseDownHandler);
@@ -56,9 +50,9 @@ const VirutalHighlight = () => {
   }, [isMouseDown]);
 
   useEffect(() => {
-    const mouseUpHandler = (e: MouseEvent) => {
+    const mouseUpHandler = () => {
       if (!virtualBoxRef.current || isMouseUp) return;
-      const rect = virtualBoxRef.current.getBoundingClientRect();
+      //   const rect = virtualBoxRef.current.getBoundingClientRect();
 
       setIsMouseUp(true);
     };
@@ -71,11 +65,7 @@ const VirutalHighlight = () => {
   useEffect(() => {
     const mouseMouseHandler = (e: MouseEvent) => {
       if (isMouseDown && !isMouseUp && virtualBoxRef.current) {
-        // console.log("fff");
-
         const rect = virtualBoxRef.current.getBoundingClientRect();
-
-        //    setIsMouseUp(true);
 
         virtualBoxRef.current.style.height = `${Math.abs(
           e.clientY - initalPoint.top
@@ -90,13 +80,7 @@ const VirutalHighlight = () => {
         if (initalPoint.left > e.clientX && initalPoint.top < e.clientY) {
           // console.log(rect.top < e.clientY);
 
-          console.log("ffs");
-
-          console.log(initalPoint, rect, e.clientX, e.clientY);
-
           virtualBoxRef.current.style.transform = `translate(${e.clientX}px, ${rect.top}px)`;
-
-         
         }
 
         //  upper left quadrant
@@ -126,7 +110,10 @@ const VirutalHighlight = () => {
   }, [isMouseDown, isMouseUp, initalPoint]);
 
   return (
-    <div ref={virtualBoxRef} className="bg-gray-300 opacity-[0.3] absolute border-1 top-0 left-0"></div>
+    <div
+      ref={virtualBoxRef}
+      className="bg-gray-300 opacity-[0.3] absolute border-1 top-0 left-0"
+    ></div>
   );
 };
 export default VirutalHighlight;
