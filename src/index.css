@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.lol {
-  /* transform-origin: ; */
-  /* margin-right: 10rem; */
-  position: absolute;
-  right: 300px;
-  width: 300px;
-  border: 1px solid red;
-  /* transform: translateX(100px); */
+@layer components {
+  * {
+    user-select: none;
+  }
+
+  .highlighted {
+    background-color: lightblue;
+  }
 }
