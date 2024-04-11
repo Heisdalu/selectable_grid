@@ -11,10 +11,9 @@ function App() {
   const boardRef = useRef({});
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <VirutalHighlight boardRefs={boardRef as Props} />
       <Board ref={boardRef} />
-      {/* <div className="lol">hello</div> */}
     </div>
   );
 }

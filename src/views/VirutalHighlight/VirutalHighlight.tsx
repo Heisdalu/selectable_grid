@@ -21,16 +21,15 @@ const VirutalHighlight = ({
 
   useEffect(() => {
     const mouseDownHandler = (e: MouseEvent) => {
-      // reset highlight when mouse is down
-
       if (!virtualBoxRef.current || isMouseDown) return;
-
+      // reset highlight boxes when mouse is down
       boardRefs.current.current.forEach((item) => {
         item.classList.remove("highlighted");
       });
 
       setIsMouseDown(true);
 
+      // set inital point
       virtualBoxRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 
       setInitialPoint(virtualBoxRef.current.getBoundingClientRect());

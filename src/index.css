@@ -9,5 +9,6 @@
 
   .highlighted {
     background-color: lightblue;
+    transition: background 0.4s;
   }
 }
