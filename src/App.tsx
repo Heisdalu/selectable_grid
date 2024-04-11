@@ -1,5 +1,4 @@
 import { useRef, MutableRefObject } from "react";
-import "./App.css";
 import Board from "./views/Board/Board";
 import VirutalHighlight from "./views/VirutalHighlight/VirutalHighlight";
 

@@ -18,14 +18,12 @@ const Board = forwardRef((_, ref) => {
         ref={func}
         className="flex justify-center items-center h-[30px] border-1 w-[30px]"
         key={i}
-      >
-        re
-      </div>
+      ></div>
     ));
 
   return (
-    <div className="flex border-1 h-[100vh] justify-center items-center">
-      <div className="border-1 grid grid-cols-10 grid-rows-10">
+    <div className="flex h-[100vh] justify-center items-center">
+      <div className="grid grid-cols-10 border-1 grid-rows-10">
         {boardTiles}
       </div>
     </div>
